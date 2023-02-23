@@ -12,15 +12,15 @@ My biggest challenge to start was learning how to pseudocode the inital acceptan
 
 - They will be prompted to enter a password length between 8 and 128 characters.
 
-![The application displays a prompt for desired password length.](./Assets/images/password-length.png)
+![The application displays a prompt for desired password length.](./Assets/Images/password-length.png)
 
 - Once an acceptable number is provided, the user is asked to select which type of characters they would like to include in the generated password.
 
-![The application displays a prompt for desired character type inclusion.](./Assets/images/character-selection.png)
+![The application displays a prompt for desired character type inclusion.](./Assets/Images/character-selection.png)
 
 ## Snapshot of Deployed Website
 
-![The Password Generator application displays a red button to "Generate Password".](./Assets/images/deployed-application.png)
+![The Password Generator application displays a red button to "Generate Password".](./Assets/Images/deployed-application.png)
 
 ## License
 
