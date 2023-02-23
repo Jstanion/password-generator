@@ -16,7 +16,7 @@ function generatePassword() {
   //Create prompt for password length of at least 8 characters and no more than 128 characters
   let passwordLength = prompt("Please select a desired password length between 8 and 128 characters:");
 
-  //Conditional statement needed to verify the correct length is provided -> error message - use alert() method -> end function and return to initial prompt?
+  //Conditional statement needed to verify the correct length is provided -> end function and return to initial prompt?
   if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
     alert("You must select a number between 8 and 128!");
   }
@@ -31,13 +31,17 @@ function generatePassword() {
   if (upperCaseSelection === false && lowerCaseSelection === false && numberSelection === false && specialCharacterSelection === false) {
     alert("You must choose at least one character type!");
   }
+  //List all characters available for function to choose from 
+  const upperCaseArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  const lowerCaseArray = "abcdefghijklmnopqrstuvwxyz".split("");
+  const numberArray = "1234567890".split("");
+  const specialCharacterArray = "!@#$%^&*()".split("");
+  
+  /*WHEN all prompts are answered
+  THEN a password is generated that matches the selected criteria*/
+  //Character types combined to create one password value -> combine with +? -> use Math.floor(Math.random)
+  
 }
-/*WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria*/
-  //List all characters available for function to choose from -> a string or an array?
-
-  //Character types combined randomly to create one password value -> combine with +? -> use Math.floor(Math.random)
-
 // Assignment Code
 var generateBtn = document.querySelector('#generate');
 
