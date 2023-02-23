@@ -1,11 +1,6 @@
-/*WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria*/
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-
-  /*WHEN the password is generated
-  THEN the password is either displayed in an alert or written to the page*/
   var passwordText = document.querySelector("#password");
   
   passwordText.value = password;
@@ -30,8 +25,9 @@ function generatePassword() {
   let specialCharacterSelection = confirm("Would you like to include special characters?");
   
   //Create a conditional statement that verifies at least one character type is selected -> error message - use alert() method -> end function if acceptance criteria isn't met
-  if (upperCaseSelection === false && lowerCaseSelection === false && numberSelection === false && specialCharacterSelection === false) {
+  if (!upperCaseSelection && !lowerCaseSelection && !numberSelection && !specialCharacterSelection) {
     alert("You must choose at least one character type!");
+    return;
   }
   //List all characters available for function to choose from 
   const upperCaseArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -39,11 +35,34 @@ function generatePassword() {
   const numberArray = "1234567890".split("");
   const specialCharacterArray = "!@#$%^&*()".split("");
   
-  /*WHEN all prompts are answered
-  THEN a password is generated that matches the selected criteria*/
-  //Character types combined to create one password value -> combine with +? -> use Math.floor(Math.random)
+  //Sets the character array to empty
+  let selectionArray = [];
   
+  //Character types combined based on selection value 
+  if (upperCaseSelection) {
+    selectionArray = selectionArray.concat(upperCaseArray);
+  }
+  if (lowerCaseSelection) {
+    selectionArray = selectionArray.concat(lowerCaseArray);
+  }
+  if (numberSelection) {
+    selectionArray = selectionArray.concat(numberArray);
+  }
+  if (specialCharacterSelection) {
+    selectionArray = selectionArray.concat(specialCharacterArray);
+  }
+
+  //create one password value using character array
+  let password = [];
+  for (let i = 0; i < passwordLength; i++) {
+    password[i] = (selectionArray[Math.floor(Math.random() * selectionArray.length)]);
+  }
+
+  //logs the password without comma seperation
+  console.log(password.join(''));
+  return password.join('');
 }
+
 // Assignment Code
 var generateBtn = document.querySelector('#generate');
 
