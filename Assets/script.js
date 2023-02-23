@@ -1,11 +1,6 @@
-/*WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria*/
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-
-  /*WHEN the password is generated
-  THEN the password is either displayed in an alert or written to the page*/
   var passwordText = document.querySelector("#password");
   
   passwordText.value = password;
@@ -43,7 +38,7 @@ function generatePassword() {
   //Sets the character array to empty
   let selectionArray = [];
   
-  //Character types combined to create one password value -> combine with +? -> use Math.floor(Math.random)
+  //Character types combined based on selection value 
   if (upperCaseSelection) {
     selectionArray = selectionArray.concat(upperCaseArray);
   }
@@ -57,7 +52,15 @@ function generatePassword() {
     selectionArray = selectionArray.concat(specialCharacterArray);
   }
 
+  //create one password value using character array
+  let password = [];
+  for (let i = 0; i < passwordLength; i++) {
+    password[i] = (selectionArray[Math.floor(Math.random() * selectionArray.length)])
+  }
+
+  
 }
+
 // Assignment Code
 var generateBtn = document.querySelector('#generate');
 
