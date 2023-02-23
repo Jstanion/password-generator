@@ -55,10 +55,12 @@ function generatePassword() {
   //create one password value using character array
   let password = [];
   for (let i = 0; i < passwordLength; i++) {
-    password[i] = (selectionArray[Math.floor(Math.random() * selectionArray.length)])
+    password[i] = (selectionArray[Math.floor(Math.random() * selectionArray.length)]);
   }
 
-  
+  //logs the password without comma seperation
+  console.log(password.join(''));
+  return password.join('');
 }
 
 // Assignment Code
