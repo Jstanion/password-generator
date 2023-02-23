@@ -17,13 +17,13 @@ function generatePassword() {
     return password = ('');
   }
 
-  //Create prompts for character types (uppercase, lowercase, numbers, special characters) included in password -> use confirm() method for boolean values
+  //Create prompts for character types (uppercase, lowercase, numbers, special characters) included in password
   let upperCaseSelection = confirm("Would you like to include uppercase letters?");
   let lowerCaseSelection = confirm("Would you like to include lowercase letters?");
   let numberSelection = confirm("Would you like to include numbers?");
   let specialCharacterSelection = confirm("Would you like to include special characters?");
   
-  //Create a conditional statement that verifies at least one character type is selected -> error message - use alert() method -> end function if acceptance criteria isn't met
+  //Create a conditional statement that verifies at least one character type is selected 
   if (!upperCaseSelection && !lowerCaseSelection && !numberSelection && !specialCharacterSelection) {
     alert("You must choose at least one character type!");
     return password = ('');
