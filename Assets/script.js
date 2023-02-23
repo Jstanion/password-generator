@@ -30,8 +30,9 @@ function generatePassword() {
   let specialCharacterSelection = confirm("Would you like to include special characters?");
   
   //Create a conditional statement that verifies at least one character type is selected -> error message - use alert() method -> end function if acceptance criteria isn't met
-  if (upperCaseSelection === false && lowerCaseSelection === false && numberSelection === false && specialCharacterSelection === false) {
+  if (!upperCaseSelection && !lowerCaseSelection && !numberSelection && !specialCharacterSelection) {
     alert("You must choose at least one character type!");
+    return;
   }
   //List all characters available for function to choose from 
   const upperCaseArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -39,10 +40,23 @@ function generatePassword() {
   const numberArray = "1234567890".split("");
   const specialCharacterArray = "!@#$%^&*()".split("");
   
-  /*WHEN all prompts are answered
-  THEN a password is generated that matches the selected criteria*/
-  //Character types combined to create one password value -> combine with +? -> use Math.floor(Math.random)
+  //Sets the character array to empty
+  let selectionArray = [];
   
+  //Character types combined to create one password value -> combine with +? -> use Math.floor(Math.random)
+  if (upperCaseSelection) {
+    selectionArray = selectionArray.concat(upperCaseArray);
+  }
+  if (lowerCaseSelection) {
+    selectionArray = selectionArray.concat(lowerCaseArray);
+  }
+  if (numberSelection) {
+    selectionArray = selectionArray.concat(numberArray);
+  }
+  if (specialCharacterSelection) {
+    selectionArray = selectionArray.concat(specialCharacterArray);
+  }
+
 }
 // Assignment Code
 var generateBtn = document.querySelector('#generate');
