@@ -18,10 +18,12 @@ function generatePassword() {
 
   //Conditional statement needed to verify the correct length is provided -> error message? -> end function and return to initial prompt?
   
-  /*WHEN asked for character types to include in the password
-  THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters*/
-  //Create prompts for character types included in password -> use confirm() method for boolean values
-  
+
+  //Create prompts for character types (uppercase, lowercase, numbers, special characters) included in password -> use confirm() method for boolean values
+  let uppeCaseSelection = confirm("Would you like to include uppercase letters?");
+  let lowerCaseSelection = confirm("Would you like to include lowercase letters?");
+  let numberSelection = confirm("Would you like to include numbers?");
+  let specialCharacterSelection = confirm("Would you like to include special characters?");
   
 }
 /*WHEN I answer each prompt
