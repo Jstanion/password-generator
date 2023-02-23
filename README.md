@@ -20,7 +20,7 @@ My biggest challenge to start was learning how to pseudocode the inital acceptan
 
 ## Snapshot of Deployed Website
 
-![The Password Generator application displays a red button to "Generate Password".](./Assets/images/03-javascript-homework-demo.png)
+![The Password Generator application displays a red button to "Generate Password".](./Assets/images/deployed-application.png)
 
 ## License
 
