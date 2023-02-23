@@ -16,8 +16,10 @@ function generatePassword() {
   //Create prompt for password length of at least 8 characters and no more than 128 characters
   let passwordLength = prompt("Please select a desired password length between 8 and 128 characters:");
 
-  //Conditional statement needed to verify the correct length is provided -> error message? -> end function and return to initial prompt?
-  
+  //Conditional statement needed to verify the correct length is provided -> error message - use alert() method -> end function and return to initial prompt?
+  if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
+    alert("You must select a number between 8 and 128!");
+  }
 
   //Create prompts for character types (uppercase, lowercase, numbers, special characters) included in password -> use confirm() method for boolean values
   let uppeCaseSelection = confirm("Would you like to include uppercase letters?");
@@ -26,9 +28,7 @@ function generatePassword() {
   let specialCharacterSelection = confirm("Would you like to include special characters?");
   
 }
-/*WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected*/
-  //Create a conditional statement that verifies at least one character type is selected -> end function if acceptance criteria isn't met
+  //Create a conditional statement that verifies at least one character type is selected -> error message - use alert() method -> end function if acceptance criteria isn't met
 
 /*WHEN all prompts are answered
 THEN a password is generated that matches the selected criteria*/
