@@ -14,8 +14,7 @@ function generatePassword() {
   //Conditional statement needed to verify the correct length is provided -> end function and return to initial prompt?
   if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
     alert("You must select a number between 8 and 128!");
-    password = ('');
-    return;
+    return password = ('');
   }
 
   //Create prompts for character types (uppercase, lowercase, numbers, special characters) included in password -> use confirm() method for boolean values
@@ -27,7 +26,7 @@ function generatePassword() {
   //Create a conditional statement that verifies at least one character type is selected -> error message - use alert() method -> end function if acceptance criteria isn't met
   if (!upperCaseSelection && !lowerCaseSelection && !numberSelection && !specialCharacterSelection) {
     alert("You must choose at least one character type!");
-    return;
+    return password = ('');
   }
   //List all characters available for function to choose from 
   const upperCaseArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
