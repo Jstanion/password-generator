@@ -34,7 +34,7 @@ function generatePassword() {
   const numberArray = "1234567890".split("");
   const specialCharacterArray = "!@#$%^&*()".split("");
   
-  //Sets the character array to empty
+  //Set the starting character array to empty
   let selectionArray = [];
   
   //Character types combined based on selection value 
@@ -51,8 +51,10 @@ function generatePassword() {
     selectionArray = selectionArray.concat(specialCharacterArray);
   }
 
-  //create one password value using character array
+  //Set the starting password array to empty
   let password = [];
+  
+  //Create one password value using randomized character array
   for (let i = 0; i < passwordLength; i++) {
     password[i] = (selectionArray[Math.floor(Math.random() * selectionArray.length)]);
   }
