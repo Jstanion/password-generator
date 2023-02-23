@@ -11,20 +11,24 @@ function writePassword() {
   passwordText.value = password;
 }
 
-/*WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters*/
-  //Create prompt for password length
+function generatePassword() {
+
+  //Create prompt for password length of at least 8 characters and no more than 128 characters
+  let passwordLength = prompt("Please select a desired password length between 8 and 128 characters:");
 
   //Conditional statement needed to verify the correct length is provided -> error message? -> end function and return to initial prompt?
+  
 
-/*WHEN asked for character types to include in the password
-THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters*/
-  //Create prompts for character types included in password
-
-
+  //Create prompts for character types (uppercase, lowercase, numbers, special characters) included in password -> use confirm() method for boolean values
+  let uppeCaseSelection = confirm("Would you like to include uppercase letters?");
+  let lowerCaseSelection = confirm("Would you like to include lowercase letters?");
+  let numberSelection = confirm("Would you like to include numbers?");
+  let specialCharacterSelection = confirm("Would you like to include special characters?");
+  
+}
 /*WHEN I answer each prompt
 THEN my input should be validated and at least one character type should be selected*/
-  //Create a conditional statement that verifies at least one character type is selected
+  //Create a conditional statement that verifies at least one character type is selected -> end function if acceptance criteria isn't met
 
 /*WHEN all prompts are answered
 THEN a password is generated that matches the selected criteria*/
