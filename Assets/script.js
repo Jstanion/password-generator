@@ -19,6 +19,8 @@ function generatePassword() {
   //Conditional statement needed to verify the correct length is provided -> end function and return to initial prompt?
   if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
     alert("You must select a number between 8 and 128!");
+    password = ('');
+    return;
   }
 
   //Create prompts for character types (uppercase, lowercase, numbers, special characters) included in password -> use confirm() method for boolean values
