@@ -22,14 +22,16 @@ function generatePassword() {
   }
 
   //Create prompts for character types (uppercase, lowercase, numbers, special characters) included in password -> use confirm() method for boolean values
-  let uppeCaseSelection = confirm("Would you like to include uppercase letters?");
+  let upperCaseSelection = confirm("Would you like to include uppercase letters?");
   let lowerCaseSelection = confirm("Would you like to include lowercase letters?");
   let numberSelection = confirm("Would you like to include numbers?");
   let specialCharacterSelection = confirm("Would you like to include special characters?");
   
-}
   //Create a conditional statement that verifies at least one character type is selected -> error message - use alert() method -> end function if acceptance criteria isn't met
-
+  if (upperCaseSelection === false && lowerCaseSelection === false && numberSelection === false && specialCharacterSelection === false) {
+    alert("You must choose at least one character type!");
+  }
+}
 /*WHEN all prompts are answered
 THEN a password is generated that matches the selected criteria*/
   //List all characters available for function to choose from -> a string or an array?
